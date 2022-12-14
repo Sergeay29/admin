@@ -1,0 +1,28 @@
+
+
+<div>
+        <?php if (isset($users)) : ?>
+            <table>
+                <tr>
+                    <th>N°</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Pseudo</th>
+                    <th colspan="2"></th>
+
+                </tr>
+                <?php foreach ($users as $key => $values) : ?>
+                    <tr>
+                        <td><?= $num++ ?></td>
+                        <td><?= $values['Nom'] ?></td>
+                        <td><?= $values['Prenoms'] ?></td>
+                        <td><?= $values['Identifiant'] ?></td>
+                        <td><button style="background-color:gray; color:white;"><a href="index.php?goto=user&target=update&id=<?= $values['Id'] ?>">Edit</a></button></td>
+                        <td><button style="background-color:brown; color:white;"><a href="index.php?goto=user&target=destroy&id=<?= $values['Id'] ?>">Delete</a></button></td>
+                    </tr>
+                <?php endforeach ?>
+            </table>
+
+        <?php endif ?>
+        
+    </div>
